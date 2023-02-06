@@ -1,16 +1,24 @@
-import NavBar from './components/NavBar/NavBar';
 import './App.css';
 import  'bootstrap/dist/css/bootstrap.min.css' ;
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Home } from './pages/Home/index'
+import { Vinilos } from './pages/Products/index'
+import { Contact } from './pages/Contact/index'
+import { Product } from './pages/Product/index'
+
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <NavBar></NavBar>
-      </header>
-      <ItemListContainer greeting="Bienvenido a Kuba"/>
-    </div>
+
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/productos" element={<Vinilos />} />
+        <Route path="/productos/:productId" element={<Product />} />
+        <Route path="/contacto" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
