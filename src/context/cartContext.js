@@ -35,6 +35,7 @@ export function CartProvider ({ defaultValue= 0, children }) {
     }
 
     function addItem(item) {
+        console.log(item.id)
         if (products.some(prod => prod.id === item.id)) {
             let i = products.findIndex(prod => prod.id === item.id)
             products[i].quantity++

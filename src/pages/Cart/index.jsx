@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CartContext, CartProvider } from '../../context/cartContext';
 import  NavBar from '../../components/NavBar/NavBar';
 import { Container } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { products, totalPrice, deleteItem, emptyCart, finishPurchase } = useContext(CartContext);
@@ -38,9 +39,9 @@ const Cart = () => {
           <hr />
           <div className="row">
             <div className="col-8">
-              <button className="btn btn-dark" onClick={() => finishPurchase()}>
-                Comprar
-              </button>
+            <Link to="/finalizarcompra" className="chart-button btn btn-block mx-2 w-20">
+              Realizar Compra
+              </Link>
               <button className="btn btn-danger" onClick={() => emptyCart()}>
                 Vaciar carrito
               </button>

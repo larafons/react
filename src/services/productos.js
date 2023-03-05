@@ -35,8 +35,9 @@ const getById = async (id) => {
 }
 
 const addOrden = async (orden) => {
+    console.log(orden)
     const db = getFirestore()
-    const ordersCollection = collection(db, "orders")
+    const ordersCollection = collection(db, "orden")
     const response = await addDoc(ordersCollection, orden)
     return response
 }
@@ -63,6 +64,7 @@ const updateCartWithNewItem  = async (id, item, price) => {
 }
 
 const updateCart= async (id, items, price) => {
+    console.log("update "+id)
     const db = getFirestore()
     const cart = doc(db, "carritos", id)
     updateDoc (cart, {'items': items})
@@ -86,4 +88,4 @@ const deleteItem = async (id, items, monto) => {
 
 }
 
-export const productosService = {getAll, getById, deleteItem, deleteCart, updateCart, updateCartWithNewItem, addCart}
+export const productosService = {getAll, getById, deleteItem, addOrden, deleteCart, updateCart, updateCartWithNewItem, addCart}
