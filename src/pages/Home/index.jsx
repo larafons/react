@@ -9,7 +9,8 @@ const Home = () => {
             <header>
                 <NavBar/>
             </header>
-            <ItemListContainer greeting="Bienvenido a Kuba"/>
+            <ItemListContainer greeting="Bienvenido!"/>
+            <h6>En nuestra pagina podras encontrar los vinilos mas buscados al mejor precio</h6>
         </Container>
     )
 }

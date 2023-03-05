@@ -13,21 +13,21 @@ export const vinilos = [
         "artist": "Harry Styles",
         "description": "Vinilo con el album completo de Harry Styles",
         "price": "5.200",
-        "img": "fineline.png"
+        "img": "fineline.jpg"
     },{
         "id": 3,
         "name":"Justice",
         "artist": "Justin Bieber",
-        "description": "Vinilo con el album completo de Justin Bieber",
+        "description": "Vinilo con el album de Justin Bieber",
         "price": "10.800",
-        "img": "justice.png"
+        "img": "justice.webp"
     },{
         "id": 4,
         "name":"Continuum",
         "artist": "John Mayer",
         "description": "Vinilo con el album completo de John Mayer",
         "price": "4.900",
-        "img": "continuum.png"
+        "img": "continuum.jpg"
     },{
         "id": 5,
         "name":"Sob Rock",

@@ -5,6 +5,8 @@ import { Home } from './pages/Home/index'
 import { Vinilos } from './pages/Products/index'
 import { Contact } from './pages/Contact/index'
 import { Product } from './pages/Product/index'
+import { CartProvider } from './context/cartContext';
+import { Cart } from './pages/Cart/index'
 
 
 function App() {
@@ -12,12 +14,15 @@ function App() {
 
 
     <BrowserRouter>
-      <Routes>
+    <CartProvider>
+    <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Vinilos />} />
         <Route path="/productos/:productId" element={<Product />} />
         <Route path="/contacto" element={<Contact />} />
-      </Routes>
+        <Route path="/carrito" element={<Cart />} />      
+    </Routes>
+    </CartProvider>
     </BrowserRouter>
   );
 }

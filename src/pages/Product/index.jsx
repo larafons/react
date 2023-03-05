@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Vinilo from '../../components/Vinilo/Vinilo';
 import { productosService } from "../../services/productos";
 import NavBar from '../../components/NavBar/NavBar';
-
+import './Product.css'
 
 function Product () {
     const [vinilo, setVinilo] = useState();
@@ -20,14 +20,16 @@ function Product () {
         <header>
             <NavBar/>
         </header>
-            <Vinilo 
+        <div>
+        <Vinilo 
             id={vinilo && vinilo.id} 
-            image={vinilo && `public/images/${vinilo.img}`}  
+            image={vinilo && `/image/${vinilo.img}`}  
             name={vinilo && vinilo.name}  
             artist={vinilo && vinilo.artist} 
             description={vinilo && vinilo.description}
             price={vinilo && vinilo.price}
         />
+        </div>
         </Container>
         );
 

@@ -15,7 +15,7 @@ function ProductDetail () {
     return (
             <Vinilo 
                 id={vinilo && vinilo.id} 
-                image={vinilo && `/images/${vinilo.img}`}  
+                image={vinilo && `/image/${vinilo.img}`}  
                 name={vinilo && vinilo.name}  
                 artist={vinilo && vinilo.artist} 
                 description={vinilo && vinilo.description} 

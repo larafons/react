@@ -12,7 +12,7 @@ function Vinilos() {
 
   useEffect(() => {
     productosService.getAll().then(
-        vinilos => setArticles(vinilos))
+        data => setArticles(data))
   }, [])  
   return (
     <Container>
@@ -20,10 +20,10 @@ function Vinilos() {
             <NavBar/>
         </header>
         <ItemListContainer greeting="Vinilos"/>
-        <Row className="row-cols-sm-1 row-cols-md-2 g-4">
+        <Row className="row-cols-sm-1 row-cols-md-3 g-4">
             {products.map( product => 
             <Col className='Main-card'>
-                <Vinilo id={product.id} image={`/images/${product.img}`}  name={product.name}  artist={product.artist} description={product.description} price={product.price}/>
+                <Vinilo id={product.id} image={`/image/${product.img}`}  name={product.name}  artist={product.artist} description={product.description} price={product.price}/>
             </Col>
             )}
         </Row>

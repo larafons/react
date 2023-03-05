@@ -9,6 +9,8 @@ const Contact = () => {
                 <NavBar/>
             </header>
             <ItemListContainer greeting="Contacto"/>
+            <br />
+            <h4>Escribinos a contacto@vinilosba.com</h4>
         </Container>
     )
 }
