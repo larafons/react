@@ -10,7 +10,7 @@ const CartWidget = () => {
   //la lógica va siempre antes del return
   return (
     <div className="cart-widget" >
-      <FontAwesomeIcon icon={faCartShopping} size="1.5x" color="black" /><small> {total}</small>
+      <FontAwesomeIcon icon={faCartShopping} size="1x" color="black" /><small> {total}</small>
     </div>
   );
 };

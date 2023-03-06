@@ -1,4 +1,4 @@
-import {getFirestore, doc, addDoc, getDoc, getDocs, collection, query, where, updateDoc, arrayUnion, increment, deleteDoc} from 'firebase/firestore'
+import {getFirestore, doc, addDoc, getDoc, getDocs, collection, updateDoc, arrayUnion, increment, deleteDoc} from 'firebase/firestore'
 
 //import { vinilos } from "../data/vinilos"; 
 //const getAll = () => {
@@ -46,6 +46,7 @@ const getCartById = async (id) => {
     const db = getFirestore()
     const cart = doc(db, 'carrito', id);
     const snapshot = await getDoc(cart);
+    console.log('cart '+snapshot.id)
    return {id: snapshot.id, ...snapshot.data()};
 }
 
@@ -57,22 +58,23 @@ const addCart = async (cart) => {
 }
 
 const updateCartWithNewItem  = async (id, item, price) => {
+    console.log(item)
     const db = getFirestore()
-    const cart = doc(db, "carts", id)
+    const cart = doc(db, "carrito", id)
     updateDoc (cart, {'items': arrayUnion(item)})
     updateDoc (cart, {'total': increment(price)})
+    updateDoc (cart, {'totalItems': increment(1)})
 }
 
 const updateCart= async (id, items, price) => {
     console.log("update "+id)
     const db = getFirestore()
-    const cart = doc(db, "carritos", id)
+    const cart = doc(db, "carrito", id)
     updateDoc (cart, {'items': items})
     updateDoc (cart, {'total': increment(price)}) 
+    updateDoc (cart, {'totalItems': increment(1)})
 }
 
-
-/* deleteCart = Borra un carrito de la base de datos. */
 const deleteCart = async (id) => {
     const db = getFirestore()
     const response = await deleteDoc(doc(db, "carts", id));
@@ -81,11 +83,11 @@ const deleteCart = async (id) => {
 
 const deleteItem = async (id, items, monto) => {
     const db = getFirestore()
-    const cart = doc(db, "carts", id)
+    const cart = doc(db, "carrito", id)
     updateDoc (cart, {'items': items})
     updateDoc (cart, {'total': increment(-monto)}) 
     updateDoc (cart, {'totalItems': increment(-1)})
 
 }
 
-export const productosService = {getAll, getById, deleteItem, addOrden, deleteCart, updateCart, updateCartWithNewItem, addCart}
+export const productosService = {getAll, getCartById, deleteItem, addOrden, deleteCart, updateCart, updateCartWithNewItem, addCart}

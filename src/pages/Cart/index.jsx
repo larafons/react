@@ -5,9 +5,8 @@ import { Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { products, totalPrice, deleteItem, emptyCart, finishPurchase } = useContext(CartContext);
+  const { products, totalPrice, deleteItem, emptyCart } = useContext(CartContext);
 
-    console.log(products)
 
   return (
     <Container>
@@ -21,7 +20,8 @@ const Cart = () => {
               <li className="list-group-item" key={item.id}>
                 <div className="row align-items-center">
                   <div className="col-8">
-                    <h5>{item.name}</h5>
+                    <h5>{item.name} </h5>
+                    <h6>Cantidad: {item.cant}</h6>
                     <p>Precio: ${item.price}</p>
                   </div>
                   <div className="col-4 text-right">

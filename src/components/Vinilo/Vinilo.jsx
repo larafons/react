@@ -9,7 +9,7 @@ function Vinilo(props) {
   const { addItem } = useContext(CartContext);
 
   const handleAddToCart = () => {
-    addItem(props);
+    addItem({id: props.id, artist: props.artist, name: props.name, description: props.description, price: props.price, cant: 1} ) ;
   };
 
 
